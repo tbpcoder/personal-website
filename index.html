@@ -2,53 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Thejas Bhat P - Personal Website</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Thejas Bhat P</title>
     <style>
+        /* General styles */
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #fff;
         }
-        nav ul {
+        .container-fluid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation styles */
+        nav {
+            display: flex;
             justify-content: space-between;
+            align-items: center;
+            background-color: #121212;
+            padding: 1rem 0;
         }
-        nav a {
-            color: #ffffff;
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
-        section {
-            padding: 2rem 0;
-            scroll-behavior: smooth;
-            transition: all 0.5s ease-in-out;
+
+        nav ul li {
+            margin: 0 1rem;
         }
-        h2, h3 {
-            color: #f5ba13;
-            margin-bottom: 1rem;
-        }
-        p, ul {
-            margin-bottom: 1rem;
-        }
-        a {
-            color: #f5ba13;
+
+        nav ul li a {
+            color: #fff;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .nav-header {
+            display: flex;
+            align-items: center;
         }
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid #333;
+
+        .nav-toggle {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
         }
-        .container img {
-            border-radius: 10px;
-            max-width: 100%;
+
+        /* Hamburger menu behavior on mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1.5rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #121212;
+                padding: 1rem;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
         }
+
+        /* About Me section */
         #about {
-            height: 32rem;
+            padding: 2rem 0;
+            height: auto;
         }
-        #inabout{
+
+        #inabout {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -59,141 +98,66 @@
             padding: 2rem;
             border-radius: 8px;
         }
+
         #me img {
-            width: 1500px;
+            width: 100%;
+            max-width: 300px;
             height: auto;
         }
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            align-items: start;
-        }
-        .experience, .certifications {
-            list-style-type: none;
-            padding-left: 0;
-        }
+
         @media (min-width: 768px) {
             #inabout {
                 flex-direction: row;
                 text-align: left;
             }
         }
-        #skills, #certifications, #blogs{
-            height: 30rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
     </style>
 </head>
 <body>
 
-<nav class="container-fluid">
-    <ul><li><strong>Thejas Bhat P</strong></li></ul>
-    <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#blogs">Blogs</a></li>
-        <li><a href="#education">Education</a></li>
-    </ul>
-</nav>
+    <!-- Navigation -->
+    <nav class="container-fluid">
+        <div class="nav-header">
+            <ul>
+                <li><strong>Thejas Bhat P</strong></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle Navigation">
+                &#9776; <!-- Hamburger Icon -->
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
 
-<main class="container">
-    <section id="about">
+    <!-- About Me Section -->
+    <section id="about" class="container-fluid">
         <div id="inabout">
-            <div>
-                <hgroup>
-                    <h2>About Me</h2>
-                    <h3>Aspiring Product Manager with DevOps Expertise | Agile & Scrum Enthusiast</h3>
-                </hgroup>
-                <p>
-                    I am an experienced DevOps Engineer specializing in Agile, Scrum methodologies, cloud technologies, and optimizing CI/CD pipelines. I'm passionate about transitioning into product management, where I can apply my technical expertise to drive strategic success. I've worked closely with cross-functional teams, refined requirements, and delivered impactful projects, such as integrating JaCoCo code coverage into CI/CD pipelines. I'm committed to continuous learning and excited to leverage my skills to contribute to business growth and product strategy.
-                </p>
-            </div>
             <div id="me">
-                <figure>
-                    <img src="me.png" alt="Me">
-                </figure>
+                <img src="your-image.jpg" alt="Profile Picture">
+            </div>
+            <div id="about-content">
+                <h2>About Me</h2>
+                <p>Hello, I'm Thejas Bhat P, a DevOps Engineer with experience in Agile and Scrum methodologies. I'm passionate about transitioning into product management to drive strategic project success by applying my technical expertise.</p>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <hgroup>
-            <h2>Skills</h2>
-            <h3>Product Management and Technical Expertise</h3>
-        </hgroup>
-        <p><strong>Product Management:</strong> Product Strategy, Roadmap Development, Agile Methodology, Scrum, Stakeholder Management, Requirements Gathering, User Story Writing, Market Research, Risk Management</p>
-        <p><strong>Technical Expertise:</strong> Cloud Technologies (AWS), CI/CD Pipelines (Jenkins, GitLab), Infrastructure as Code (Terraform, Ansible), Containerization (Docker, Kubernetes), Code Coverage Integration (JaCoCo), Software Development (C++, Python)</p>
-        <p><strong>Languages:</strong> English, Kannada, Hindi</p>
-    </section>
+    <!-- Your other sections go here -->
 
-    <section id="experience">
-        <hgroup>
-            <h2>Experience</h2>
-            <h3>DevOps Engineer (Aug 2023 - Present)</h3>
-        </hgroup>
-        <ul class="experience">
-            <li><strong>Led a cross-functional team</strong> of 5 to develop and implement automated deployment processes, resulting in a 30% reduction in deployment time and ensuring smooth project execution.</li>
-            <li><strong>Directed the project</strong> to establish and configure Jenkins pipelines for the QA team, overseeing requirements gathering, workflow design, and output validation.</li>
-            <li><strong>Conducted training sessions</strong> for new hires, enhancing onboarding efficiency and boosting team productivity.</li>
-            <li><strong>Led the integration of JaCoCo for code coverage</strong> within CI/CD pipelines, resulting in 90% coverage across 75 services. This initiative improved project quality assurance and risk management by enhancing code quality visibility and stakeholder confidence in deliverables.</li>
-        </ul>
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
 
-        <hgroup><h3>DevOps Intern (Jan 2023 - July 2023)</h3></hgroup>
-        <ul class="experience">
-            <li><strong>Collaborated with senior engineers</strong> to set up and maintain 45+ critical services in production using Kubernetes and AWS Cloud, ensuring 90% uptime and operational reliability.</li>
-            <li><strong>Managed CI/CD pipeline development</strong>, reducing deployment time by 30% and improving release reliability and frequency.</li>
-        </ul>
-
-    </section>
-
-    <section id="certifications">
-        <hgroup>
-            <h2>Certifications</h2>
-            <h3></h3>
-        </hgroup>
-        <ul class="certifications">
-            <li>
-                <a href="https://drive.google.com/file/d/160nzKNv3jtu8Jgm7FXewWCpZNLwCWu7t/view?usp=sharing">
-                    <strong>Scrum Basics - Project Management Institute</strong>
-                </a><br>
-                Gained expertise in <strong>Scrum principles</strong>, focusing on sprint cycles, backlog management, and continuous improvement processes. This certification has enhanced my ability to manage Agile teams efficiently and ensure smooth delivery of products.
-            </li>
-            <li>
-                <a href="https://drive.google.com/file/d/11itiSRK5KS1z2pRHVsWOCLcC2dLW31WA/view?usp=sharing">
-                    <strong>Product Management Basics - Pendo</strong>
-                </a><br>
-                Acquired a solid understanding of <strong>product lifecycle management</strong>, including product discovery, market analysis, user research, and defining key metrics for product success. This certification strengthened my ability to build and deliver user-centric products while aligning business goals with customer needs.
-            </li>
-        </ul>
-
-    </section>
-
-    <section id="blogs">
-        <hgroup>
-            <h2>Blogs</h2>
-            <h3><a href="https://medium.com/@thejas.bhat11/mastering-the-project-management-lifecycle-a-practical-guide-with-plantary-bbb06df315d8"><strong>Article on Project Management Lifecycle</strong></a></h3>
-        </hgroup>
-        <p>In this piece, I dive into the essential phases of project management—Initiation, Planning, Execution, and Closing—using a practical example with our fictional company, Plantary. I applied the skills I learned from the Google Project Management course to bring this guide to life.</p>
-    </section>
-
-    <section id="education">
-        <hgroup>
-            <h2>Education</h2>
-            <h3>Bachelor of Engineering in Computer Science</h3>
-        </hgroup>
-        <p><strong>Ramaiah Institute of Technology</strong> (2019 - 2023)</p>
-        <p>GPA: 8.4</p>
-    </section>
-</main>
-
-<footer class="container">
-    <small><a href="https://www.linkedin.com/in/thejasbhat/" target="_blank">LinkedIn</a> • <a href="https://github.com/tbpcoder" target="_blank">GitHub</a></small>
-</footer>
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
 
 </body>
 </html>
